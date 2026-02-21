@@ -1,20 +1,20 @@
 {
   "name": "cowork-plugins",
   "owner": {
-    "name": "Cowork Plugins"
+    "name": "Omer Horev"
   },
   "metadata": {
     "description": "Claude Cowork marketplace for shared skills and commands",
-    "version": "1.0.0"
+    "version": "1.0.1"
   },
   "plugins": [
     {
-      "name": "example-plugin",
-      "source": "./plugins/example-plugin",
-      "description": "Example plugin with a sample skill and slash command",
-      "version": "1.0.0",
+      "name": "founders-plugin",
+      "source": "./plugins/founders-plugin",
+      "description": "Plugins used by founders to manage their product, sales and insights",
+      "version": "1.0.1",
       "author": {
-        "name": "Cowork Plugins"
+        "name": "Omer Horev"
       }
     }
   ]
