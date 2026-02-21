@@ -1,0 +1,8 @@
+{
+  "name": "example-plugin",
+  "description": "Example plugin with a sample skill and slash command",
+  "version": "1.0.0",
+  "author": {
+    "name": "Cowork Plugins"
+  }
+}
