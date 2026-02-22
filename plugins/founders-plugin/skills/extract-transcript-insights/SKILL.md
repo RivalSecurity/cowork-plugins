@@ -70,6 +70,9 @@ Total open vulns or rough estimate. Note the source (scanner, aggregator, etc.) 
 **Vuln breakdown**
 By type: cloud, container/image, SCA, SAST, runtime, network. Use their framing.
 
+**Vulnerabilities focus**
+Classify whether their focus is mainly: **Code** (SAST, SCA), **Cloud** (container vulns, image vulns, EC2 vulns), **OS** (operating system, patches), or **Both/All** (multiple or all of the above). Use evidence from vuln breakdown, scanners, backlog sources, and what they prioritize.
+
 **Scanners in use**
 All tools named. Note if any are being replaced or evaluated.
 

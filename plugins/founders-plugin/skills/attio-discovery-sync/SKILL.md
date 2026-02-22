@@ -6,7 +6,7 @@ description: >
 
 # Attio Discovery Sync
 
-Takes structured discovery data from a transcript or extraction already in context and writes it into the Attio company record — specifically the six fields used to track technical environment, vulnerability management posture, and workflow fit. Always shows the user a review table before writing anything.
+Takes structured discovery data from a transcript or extraction already in context and writes it into the Attio company record — specifically the seven fields used to track technical environment, vulnerability management posture, vulnerabilities focus, and workflow fit. Always shows the user a review table before writing anything.
 
 ## Fields this skill writes to
 
@@ -18,6 +18,7 @@ Takes structured discovery data from a transcript or extraction already in conte
 | Current Process Description | `current_process_description` | text |
 | Ticketing Systems | `ticketing_systems` | multiselect select |
 | Asset Scale | `asset_scale` | single select |
+| Vulnerabilities Focus | `vulnerabilities_focus` | multiselect select |
 
 ---
 
@@ -29,7 +30,7 @@ If the Attio record ID isn't already known from context, search using `search-re
 
 ### Step 2 — Read field definitions and current values (run in parallel)
 
-- `list-attribute-definitions` on `companies`, querying for the six slugs above — to get the full list of available select options for each field
+- `list-attribute-definitions` on `companies`, querying for the seven slugs above — to get the full list of available select options for each field
 - `get-records-by-ids` for the company — to see what's already populated
 
 This tells you two things: what options exist (so you don't try to write something that isn't there), and what's already set (so you add without clobbering).
@@ -47,6 +48,8 @@ For each field, extract a proposed value from the transcript and/or discovery ex
 **Text fields**: If the field is empty, write the full description. If it already has content, don't overwrite it — flag it as `Needs review — field already populated` and show the user both the existing and proposed values so they can decide.
 
 **Asset Scale**: This is frequently not stated directly. If you must infer, use employee count, fleet size descriptions, or compliance scope as signals — but flag it clearly as `Inferred — not explicitly stated` so the user knows the confidence level.
+
+**Vulnerabilities Focus**: Map from the extraction's **Vulnerabilities focus** (Code / Cloud / OS / Both/All). Propose the matching option(s): one value for Code, Cloud, or OS; or all three (Code, Cloud, OS) when the extraction says **Both/All**. Only propose values that exist as options. Use `patch_multiselect_values: true` when writing — add without removing existing values.
 
 ### Step 4 — Show the review table
 
