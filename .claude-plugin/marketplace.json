@@ -5,14 +5,14 @@
   },
   "metadata": {
     "description": "Claude Cowork marketplace for shared skills and commands",
-    "version": "1.0.1"
+    "version": "1.0.2"
   },
   "plugins": [
     {
       "name": "founders-plugin",
       "source": "./plugins/founders-plugin",
       "description": "Plugins used by founders to manage their product, sales and insights",
-      "version": "1.0.1",
+      "version": "1.0.2",
       "author": {
         "name": "Omer Horev"
       }

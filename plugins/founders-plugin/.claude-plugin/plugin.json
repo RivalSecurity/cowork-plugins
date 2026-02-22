@@ -1,7 +1,7 @@
 {
   "name": "founders-plugin",
   "description": "Plugins used by founders to manage their product, sales and insights",
-  "version": "1.0.1",
+  "version": "1.0.2",
   "author": {
     "name": "Omer Horev"
   }
